@@ -7,31 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Space+Mono&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #9b9b9b; --bg: #0f0f0f; --tech-font: 'Space Mono', monospace; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; margin: 0; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; margin: 0; }
         nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #252525; align-items: center; }
         .logo { font-family: var(--tech-font); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; color: #fff; }
-        nav a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.75rem; letter-spacing: 2px; font-weight: 300; }
-        nav a:hover, nav a.active { color: #fff; }
-        .container { padding: 60px 10%; max-width: 1000px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; }
-        h2 { font-size: 3rem; letter-spacing: -2px; margin-bottom: 40px; grid-column: 1 / -1; margin-top: 0; }
-        form { display: flex; flex-direction: column; gap: 20px; }
-        .input-group { display: flex; flex-direction: column; gap: 5px; }
-        .label-form { font-family: var(--tech-font); font-size: 0.6rem; color: #444; text-transform: uppercase; }
-        input, textarea { 
-            background: #111; border: 1px solid #222; padding: 15px; 
-            color: #fff; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; transition: 0.3s;
-        }
-        input:focus, textarea:focus { border-color: #666; }
-        .btn-send { 
-            background: #fff; color: #000; padding: 18px; border: none; 
-            font-weight: bold; cursor: pointer; font-family: var(--tech-font); letter-spacing: 1px; 
-        }
-        .btn-send:disabled { background: #333; color: #666; }
-        .contact-info { display: flex; flex-direction: column; gap: 30px; }
-        .info-block { border-top: 1px solid #222; padding-top: 20px; }
-        .label { font-family: var(--tech-font); color: #444; font-size: 0.7rem; text-transform: uppercase; }
-        .data { font-size: 1.1rem; color: #f0f0f0; text-decoration: none; display: block; margin-top: 5px; }
-        @media (max-width: 850px) { .container { grid-template-columns: 1fr; } }
+        nav div a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.75rem; letter-spacing: 2px; }
+        .container { padding: 60px 10%; max-width: 800px; margin: auto; }
+        h2 { font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 30px; }
+        form { display: flex; flex-direction: column; gap: 15px; max-width: 450px; }
+        input, textarea { background: #111; border: 1px solid #333; padding: 15px; color: #fff; font-family: inherit; }
+        button { background: #fff; color: #000; padding: 15px; border: none; font-weight: bold; cursor: pointer; font-family: var(--tech-font); }
+        button:hover { background: #ccc; }
     </style>
 </head>
 <body>
@@ -39,81 +24,19 @@
         <a href="index.html" class="logo">ARQMX.IO</a>
         <div>
             <a href="index.html">INICIO</a>
-            <a href="portafolio.html">PORTAFOLIO</a>
-            <a href="servicios.html">SERVICIOS</a>
-            <a href="blog.html">BLOG</a>
-            <a href="contacto.html" class="active" style="color:#fff">CONTACTO</a>
+            <a href="contacto.html" style="color:#fff">CONTACTO</a>
         </div>
     </nav>
-
     <div class="container">
         <h2>VAMOS A CONSTRUIR.</h2>
 
-        <form id="arqmx-form">
-            <div class="input-group">
-                <span class="label-form">Nombre</span>
-                <input type="text" name="nombre" placeholder="Tu nombre" required>
-            </div>
-            <div class="input-group">
-                <span class="label-form">Correo</span>
-                <input type="email" name="email" placeholder="email@ejemplo.com" required>
-            </div>
-            <div class="input-group">
-                <span class="label-form">Proyecto</span>
-                <textarea name="mensaje" placeholder="Cuéntanos tu idea..." rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn-send" id="btn-submit">ENVIAR SOLICITUD</button>
+        <form action="https://formspree.io/f/mqpkvpzk" method="POST">
+            <input type="text" name="name" placeholder="Tu Nombre" required>
+            <input type="email" name="email" placeholder="Tu Correo" required>
+            <textarea name="message" placeholder="Háblanos de tu proyecto" rows="5" required></textarea>
+            
+            <button type="submit">ENVIAR SOLICITUD</button>
         </form>
-
-        <div class="contact-info">
-            <div class="info-block">
-                <span class="label">WhatsApp</span>
-                <a href="https://wa.me/525617747188" class="data">+52 56 1774 7188</a>
-            </div>
-            <div class="info-block">
-                <span class="label">Email</span>
-                <a href="mailto:p6366609@gmail.com" class="data">p6366609@gmail.com</a>
-            </div>
-        </div>
     </div>
-
-    <script>
-        const form = document.getElementById('arqmx-form');
-        const btn = document.getElementById('btn-submit');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // URL DE TU TÚNEL PINGGY ACTUAL
-            const PINGGY_URL = 'https://auzio-2806-104e-18-95e7-767c-a72c-d752-b8b5.a.free.pinggy.link'; 
-            const WEBHOOK_PATH = '/webhook-test/contacto'; 
-            
-            btn.innerText = 'ENVIANDO...';
-            btn.disabled = true;
-
-            const data = Object.fromEntries(new FormData(form));
-
-            try {
-                const response = await fetch(PINGGY_URL + WEBHOOK_PATH, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-
-                if (response.ok) {
-                    alert('¡Recibido! Nos contactaremos pronto.');
-                    form.reset();
-                } else {
-                    throw new Error();
-                }
-            } catch (err) {
-                alert('Servidor fuera de línea. Redirigiendo a WhatsApp...');
-                window.location.href = "https://wa.me/525617747188";
-            } finally {
-                btn.innerText = 'ENVIAR SOLICITUD';
-                btn.disabled = false;
-            }
-        });
-    </script>
 </body>
 </html>
