@@ -41,8 +41,8 @@
             };
 
             try {
-                // AQUÍ VA TU URL DE SERVEO
-                const response = await fetch('https://7d1e67147f4434c2-201-106-20-138.serveousercontent.com/webhook/contacto-arqmx', {
+                // URL ACTUALIZADA DE SERVEO
+                const response = await fetch('https://aa0165cd8a6b1d29-201-106-20-138.serveousercontent.com/webhook/contacto-arqmx', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
@@ -52,10 +52,10 @@
                     status.innerText = "ORDEN_RECIBIDA_EXITOSAMENTE";
                     form.reset();
                 } else {
-                    status.innerText = "ERROR_DE_CONEXION";
+                    status.innerText = "ERROR_N8N_NO_RESPONDE";
                 }
             } catch (err) {
-                status.innerText = "ERROR: N8N_OFFLINE";
+                status.innerText = "ERROR: TUNEL_OFFLINE";
             }
         };
     </script>
