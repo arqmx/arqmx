@@ -2,43 +2,21 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARQMX.IO | Contacto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Space+Mono&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #9b9b9b; --bg: #0f0f0f; --tech-font: 'Space Mono', monospace; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; margin: 0; }
-        nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #252525; align-items: center; }
-        .logo { font-family: var(--tech-font); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; color: #fff; }
-        nav div a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.75rem; letter-spacing: 2px; }
-        .container { padding: 60px 10%; max-width: 800px; margin: auto; }
-        h2 { font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 30px; }
-        form { display: flex; flex-direction: column; gap: 15px; max-width: 450px; }
-        input, textarea { background: #111; border: 1px solid #333; padding: 15px; color: #fff; font-family: inherit; font-size: 1rem; }
-        button { background: #fff; color: #000; padding: 15px; border: none; font-weight: bold; cursor: pointer; font-family: var(--tech-font); margin-top: 10px; }
-        button:hover { background: var(--accent); }
+        body { background: #0f0f0f; color: white; font-family: sans-serif; padding: 50px; text-align: center; }
+        form { display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: auto; background: #111; padding: 30px; border-radius: 10px; }
+        input, textarea { background: #000; border: 1px solid #333; color: white; padding: 12px; }
+        button { background: white; color: black; padding: 15px; font-weight: bold; cursor: pointer; border: none; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">ARQMX.IO</a>
-        <div>
-            <a href="index.html">INICIO</a>
-            <a href="contacto.html" style="color:#fff">CONTACTO</a>
-        </div>
-    </nav>
-    <div class="container">
-        <h2>VAMOS A CONSTRUIR.</h2>
-
-        <form action="https://formspree.io/f/maqngrnp" method="POST">
-            <input type="text" name="nombre" placeholder="Tu Nombre" required>
-            <input type="email" name="email" placeholder="Tu Correo" required>
-            <textarea name="mensaje" placeholder="Háblanos de tu proyecto" rows="5" required></textarea>
-            
-            <input type="hidden" name="_next" value="https://arqmx.github.io/arqmx/contacto.html">
-            
-            <button type="submit">ENVIAR SOLICITUD</button>
-        </form>
-    </div>
+    <h2>CONTACTO ARQMX</h2>
+    <form action="https://formspree.io/f/maqngrnp" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Correo" required>
+        <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
+        <button type="submit">ENVIAR MENSAJE</button>
+    </form>
 </body>
 </html>
