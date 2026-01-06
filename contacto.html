@@ -12,13 +12,28 @@
         .logo { font-family: var(--tech-font); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; color: #fff; }
         nav a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.75rem; letter-spacing: 2px; font-weight: 300; }
         nav a:hover, nav a.active { color: #fff; }
-        .container { padding: 100px 10%; max-width: 800px; }
-        h2 { font-size: 3rem; letter-spacing: -2px; margin-bottom: 50px; }
-        .contact-item { margin-bottom: 40px; }
-        .label { font-family: var(--tech-font); color: #444; font-size: 0.7rem; text-transform: uppercase; display: block; margin-bottom: 10px; }
-        .data { font-size: 1.5rem; color: #f0f0f0; text-decoration: none; transition: 0.3s; border-bottom: 1px solid transparent; }
-        .data:hover { color: var(--accent); border-bottom: 1px solid var(--accent); }
-        .btn-wa { display: inline-block; background: #fff; color: #000; padding: 15px 30px; text-decoration: none; margin-top: 20px; font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; }
+        
+        .container { padding: 60px 10%; max-width: 800px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        h2 { font-size: 3rem; letter-spacing: -2px; margin-bottom: 30px; grid-column: 1 / -1; }
+        
+        /* Estilos del Formulario */
+        form { display: flex; flex-direction: column; gap: 20px; }
+        input, textarea { 
+            background: #161616; border: 1px solid #333; padding: 15px; 
+            color: #fff; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; 
+        }
+        input:focus, textarea:focus { border-color: var(--accent); }
+        .btn-send { 
+            background: #fff; color: #000; padding: 15px; border: none; 
+            font-weight: bold; cursor: pointer; font-family: var(--tech-font); letter-spacing: 1px; 
+        }
+        .btn-send:disabled { background: #444; cursor: not-allowed; }
+
+        .contact-info { display: flex; flex-direction: column; gap: 30px; }
+        .label { font-family: var(--tech-font); color: #444; font-size: 0.7rem; text-transform: uppercase; display: block; margin-bottom: 5px; }
+        .data { font-size: 1.1rem; color: #f0f0f0; text-decoration: none; transition: 0.3s; }
+        
+        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -32,21 +47,68 @@
             <a href="contacto.html" class="active" style="color:#fff">CONTACTO</a>
         </div>
     </nav>
+
     <div class="container">
         <h2>VAMOS A CONSTRUIR.</h2>
-        <div class="contact-item">
-            <span class="label">Email</span>
-            <a href="mailto:p6366609@gmail.com" class="data">p6366609@gmail.com</a>
+
+        <form id="form-n8n">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="mensaje" placeholder="Tu idea o proyecto..." rows="4" required></textarea>
+            <button type="submit" class="btn-send" id="btn-txt">ENVIAR SOLICITUD</button>
+        </form>
+
+        <div class="contact-info">
+            <div>
+                <span class="label">Email</span>
+                <a href="mailto:p6366609@gmail.com" class="data">p6366609@gmail.com</a>
+            </div>
+            <div>
+                <span class="label">WhatsApp</span>
+                <a href="https://wa.me/525617747188" class="data">+52 56 1774 7188</a>
+            </div>
+            <div>
+                <span class="label">Social</span>
+                <a href="https://www.facebook.com/profile.php?id=61581126082365" target="_blank" class="data">Facebook</a>
+            </div>
         </div>
-        <div class="contact-item">
-            <span class="label">WhatsApp</span>
-            <a href="https://wa.me/525617747188" class="data">+52 56 1774 7188</a>
-        </div>
-        <div class="contact-item">
-            <span class="label">Facebook</span>
-            <a href="https://www.facebook.com/profile.php?id=61581126082365" target="_blank" class="data">ARQMX Oficial</a>
-        </div>
-        <a href="https://wa.me/525617747188" class="btn-wa">ENVIAR WHATSAPP</a>
     </div>
+
+    <script>
+        const form = document.getElementById('form-n8n');
+        const btn = document.getElementById('btn-txt');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            btn.innerText = 'PROCESANDO...';
+            btn.disabled = true;
+
+            // REEMPLAZA ESTA URL CON LA QUE TE DE N8N AL HACER 'n8n start --tunnel'
+            const N8N_URL = 'https://TU_SUBDOMINIO.hooks.n8n.cloud/webhook/contacto';
+
+            const payload = Object.fromEntries(new FormData(form));
+
+            try {
+                const response = await fetch(N8N_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    alert('Recibido. Nos pondremos en contacto pronto.');
+                    form.reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (err) {
+                alert('No pudimos conectar con el servidor local. Intentando por WhatsApp...');
+                window.location.href = "https://wa.me/525617747188?text=Hola, intenté contactarte por la web...";
+            } finally {
+                btn.innerText = 'ENVIAR SOLICITUD';
+                btn.disabled = false;
+            }
+        });
+    </script>
 </body>
 </html>
