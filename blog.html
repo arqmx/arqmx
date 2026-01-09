@@ -1,16 +1,95 @@
-<h2>Consejos para Diseñar una Casa Sostenible</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARQMX.IO | Blog Técnica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #9b9b9b; --bg: #0f0f0f; --card: #161616; --tech-font: 'Space Mono', monospace; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; margin: 0; }
+        
+        nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #252525; align-items: center; background: #000; }
+        .logo { font-family: var(--tech-font); font-weight: bold; font-size: 1.2rem; letter-spacing: 2px; text-decoration: none; color: #fff; }
+        nav a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.7rem; letter-spacing: 2px; }
+        nav a.active { color: #fff; }
 
-<p>En la actualidad, la sostenibilidad es un tema cada vez más importante en la industria de la arquitectura. Los edificios tienen un impacto significativo en el medio ambiente, ya que consumen recursos naturales y generan residuos. Sin embargo, hay muchas formas de diseñar una casa que sea no solo atractiva, sino también sostenible.</p>
+        .admin-bar { background: #1a1a1a; padding: 10px 5%; display: flex; gap: 20px; border-bottom: 1px solid #333; font-family: var(--tech-font); font-size: 0.7rem; color: #666; }
+        .add-file-btn { background: #333; color: #fff; padding: 5px 15px; border-radius: 4px; text-decoration: none; }
 
-<p>En este artículo, te presentaremos algunos consejos para Diseñar una Casa Sostenible que te ayudarán a crear un edificio que no solo sea eficiente energéticamente, sino también respetuoso con el medio ambiente. Aquí hay algunos consejos que debes tener en cuenta:</p>
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 5%; }
+        .section-header { border-left: 2px solid #333; padding-left: 20px; margin-bottom: 40px; }
+        .section-header h1 { font-size: 1.5rem; font-family: var(--tech-font); font-weight: 300; color: var(--accent); }
 
-<ul>
-  <li>Utiliza materiales locales y reciclados**: Opta por materiales que sean producidos localmente y que tengan un bajo impacto ambiental. Los materiales reciclados también pueden ser una excelente opción, ya que reducen la cantidad de residuos que se generan en la producción.</li>
-  <li>Incorpora sistemas de ahorro de energía**: Considera instalar sistemas de ahorro de energía, como sistemas solares o paneles de energía eólica, para reducir la dependencia del combustible fósil y minimizar el impacto en el medio ambiente.</li>
-  <li>Crea un diseño eficiente**: Asegúrate de que tu diseño sea eficiente en términos de espacio y energía. Utiliza espacios múltiples y optimiza la iluminación natural para reducir la necesidad de luz artificial.</li>
-  <li>Utiliza sistemas de agua reutilizada**: Considera instalar sistemas de agua reutilizada, como tanques de almacenamiento o sistemas de reciclaje de aguas pluviales, para reducir el consumo de agua potable y minimizar la cantidad de residuos que se generan.</li>
-</ul>
+        /* ESTILO LISTA BLOG */
+        .blog-list { border: 1px solid #222; border-radius: 4px; overflow: hidden; }
+        .blog-item { display: grid; grid-template-columns: 100px 1fr 150px; padding: 20px; border-bottom: 1px solid #222; background: var(--card); transition: 0.3s; align-items: center; }
+        .blog-item:hover { background: #1d1d1d; }
+        
+        .blog-thumb { width: 70px; height: 70px; background: #000; display: flex; align-items: center; justify-content: center; border: 1px solid #333; }
+        .blog-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+        
+        .blog-info h2 { margin: 0; font-size: 1.1rem; letter-spacing: -0.5px; }
+        .blog-info p { margin: 5px 0 0; color: #666; font-size: 0.85rem; }
+        
+        .blog-meta { font-family: var(--tech-font); font-size: 0.65rem; color: #444; text-align: right; }
+        .btn-yt { color: #f00; text-decoration: none; display: block; margin-top: 5px; }
 
-<p>En conclusión, diseñar una casa sostenible no tiene que ser un desafío. Con un poco de creatividad y planificación, puedes crear un edificio que no solo sea atractivo, sino también respetuoso con el medio ambiente. Recuerda que la sostenibilidad es un proceso continuo, así que asegúrate de monitorear tus progresos y hacer ajustes según sea necesario.</p>
+        @media (max-width: 768px) {
+            .blog-item { grid-template-columns: 1fr; gap: 15px; text-align: left; }
+            .blog-meta { text-align: left; }
+        }
+    </style>
+</head>
+<body>
 
-Para más información sobre nuestros servicios de arquitectura, visita nuestra sección de contacto.
+    <nav>
+        <a href="index.html" class="logo">ARQMX.IO</a>
+        <div>
+            <a href="index.html">INICIO</a>
+            <a href="portafolio.html">PORTAFOLIO</a>
+            <a href="servicios.html">SERVICIOS</a>
+            <a href="blog.html" class="active">BLOG</a>
+            <a href="contacto.html">CONTACTO</a>
+        </div>
+    </nav>
+
+    <div class="admin-bar">
+        <span>root / arqmx / contents / </span>
+        <a href="https://www.youtube.com/@TuCanal" class="add-file-btn">+ Add content</a>
+    </div>
+
+    <div class="container">
+        <div class="section-header">
+            <h1>BITÁCORA DE PROYECTOS <span style="color:#333">//</span> MEDIA</h1>
+        </div>
+
+        <div class="blog-list">
+            <div class="blog-item">
+                <div class="blog-thumb"><img src="https://img.youtube.com/vi/dQw4w9WgXcQ/default.jpg"></div>
+                <div class="blog-info">
+                    <h2>01. Análisis de Materiales: Concreto Aparente</h2>
+                    <p>Explorando la textura y durabilidad en obra residencial.</p>
+                </div>
+                <div class="blog-meta">
+                    <span>DEC 2025</span>
+                    <a href="#" class="btn-yt">YOUTUBE_LINK</a>
+                </div>
+            </div>
+
+            <div class="blog-item">
+                <div class="blog-thumb"><img src="https://img.youtube.com/vi/dQw4w9WgXcQ/default.jpg"></div>
+                <div class="blog-info">
+                    <h2>02. Tutorial: Configuración de Luces en V-Ray</h2>
+                    <p>Mi flujo de trabajo para renders de interiores nocturnos.</p>
+                </div>
+                <div class="blog-meta">
+                    <span>NOV 2025</span>
+                    <a href="#" class="btn-yt">YOUTUBE_LINK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
