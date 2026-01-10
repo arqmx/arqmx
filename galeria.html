@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Consolas', monospace; background: #121212; margin: 0; padding: 0; color: #fff; overflow-x: hidden; }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+        .grid-item {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .grid-item:hover { border-color: #fff; }
+        .grid-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        .caption { padding: 10px; font-size: 0.7rem; color: #666; text-align: center; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="grid-container" id="galeria_master"></div>
+    <script>
+        const nombreCarpeta = "imagenes_proyectos"; 
+        // He puesto de la 1 a la 10 como pediste
+        const fotos = ["imagen_1.jpg", "imagen_2.jpg", "imagen_3.jpg", "imagen_4.jpg", "imagen_5.jpg", "imagen_6.jpg", "imagen_7.jpg", "imagen_8.jpg", "imagen_9.jpg", "imagen_10.jpg"]; 
+
+        const contenedor = document.getElementById('galeria_master');
+
+        fotos.forEach((foto, index) => {
+            const item = document.createElement('div');
+            item.className = 'grid-item';
+            item.innerHTML = `
+                <img src="${nombreCarpeta}/${foto}" alt="Proyecto ARQCONCEPTUAL" onerror="this.parentElement.style.display='none'">
+                <div class="caption">RENDER_${index + 1}_PROYECTO</div>
+            `;
+            contenedor.appendChild(item);
+        });
+    </script>
+</body>
+</html>
