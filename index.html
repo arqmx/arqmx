@@ -2,57 +2,43 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARQMX.IO | Estudio de Arquitectura</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <title>ARQCONCEPTUAL | Inicio</title>
     <style>
-        :root { --accent: #9b9b9b; --bg: #121212; --text: #f0f0f0; --tech-font: 'Space Mono', monospace; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; }
+        body { font-family: 'Consolas', monospace; background: #121212; color: #f0f0f0; margin: 0; line-height: 1.8; }
+        nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #252525; align-items: center; background: #000; }
+        .logo { font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; color: #fff; }
+        nav div a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.8rem; text-transform: uppercase; }
+        nav div a:hover { color: #fff; }
         
-        nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #252525; align-items: center; }
-        .logo { font-family: var(--tech-font); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; color: #fff; }
-        nav a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.75rem; letter-spacing: 2px; transition: 0.3s; font-weight: 300; }
-        nav a:hover, nav a.active { color: #fff; border-bottom: 1px solid #fff; }
+        .container { padding: 60px 10%; max-width: 900px; margin: 0 auto; }
+        h1 { font-size: 4rem; margin-bottom: 20px; text-transform: uppercase; }
+        h2 { font-size: 1.6rem; color: #9b9b9b; margin-top: 40px; margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid #333; display: inline-block; }
+        p { margin-bottom: 25px; text-align: justify; color: #ccc; }
         
-        .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 10%; background: linear-gradient(rgba(18,18,18,0.8), rgba(18,18,18,0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1500&q=80') center/cover; }
-        h1 { font-size: 4.5rem; margin: 0; line-height: 0.9; letter-spacing: -3px; font-weight: 700; }
-        .hero p { color: #888; max-width: 500px; margin-top: 30px; font-size: 1rem; border-left: 2px solid var(--accent); padding-left: 20px; }
-
-        /* SECCIÓN DE IA ESTILO DASHBOARD */
-        .ia-console { padding: 60px 10%; background: #0a0a0a; border-top: 1px solid #252525; }
-        .console-box { max-width: 800px; }
-        .label { font-family: var(--tech-font); font-size: 0.7rem; color: var(--accent); letter-spacing: 2px; margin-bottom: 15px; display: block; }
-        
-        textarea { 
-            width: 100%; background: #1a1a1a; border: 1px solid #333; color: white; padding: 20px; 
-            font-family: 'Inter', sans-serif; font-size: 1rem; resize: none; outline: none; transition: 0.3s; box-sizing: border-box;
+        /* Espacio para imagen solicitado */
+        .img-placeholder-main { 
+            width: 100%; height: 400px; background: #1a1a1a; 
+            border: 1px dashed #444; margin: 40px 0; 
+            display: flex; align-items: center; justify-content: center;
+            color: #555; font-size: 1.2rem;
+            overflow: hidden; /* Para que la imagen no se salga del cuadro */
         }
-        textarea:focus { border-color: #fff; }
-
-        .btn-ia {
-            margin-top: 20px; background: #fff; color: #000; border: none; padding: 15px 40px;
-            font-family: var(--tech-font); font-size: 0.8rem; font-weight: bold; cursor: pointer; transition: 0.3s;
+        .img-placeholder-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Para que la imagen cubra todo el espacio sin deformarse */
         }
-        .btn-ia:hover { background: var(--accent); }
-        .btn-ia:disabled { background: #333; cursor: not-allowed; }
 
-        #response-card { 
-            margin-top: 30px; padding: 25px; border: 1px solid #252525; display: none; 
-            background: #151515; border-left: 3px solid #fff;
-        }
-        .response-text { font-size: 0.95rem; line-height: 1.6; color: #ccc; }
-
-        .social-footer { padding: 40px; text-align: center; border-top: 1px solid #252525; margin-top: 50px; }
-        .social-links a { color: var(--accent); text-decoration: none; margin: 0 15px; font-size: 0.8rem; font-family: var(--tech-font); }
-        .social-links a:hover { color: #fff; }
+        .legal-footer { padding: 40px 5%; border-top: 1px solid #252525; text-align: center; font-size: 0.7rem; margin-top: 50px; }
+        .social-links { margin-bottom: 20px; }
+        .social-links a { margin: 0 10px; color: #fff; text-decoration: none; border: 1px solid #444; padding: 5px 10px; }
     </style>
 </head>
 <body>
-
     <nav>
-        <a href="index.html" class="logo">ARQMX.IO</a>
+        <a href="index.html" class="logo">ARQCONCEPTUAL</a>
         <div>
-            <a href="index.html" class="active">INICIO</a>
+            <a href="index.html">INICIO</a>
             <a href="portafolio.html">PORTAFOLIO</a>
             <a href="servicios.html">SERVICIOS</a>
             <a href="blog.html">BLOG</a>
@@ -60,73 +46,48 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>PROYECTAR<br>LA MATERIA.</h1>
-        <p>Soluciones arquitectónicas integrales desde la concepción hasta la materialización técnica. ARQMX combina precisión y diseño.</p>
-    </section>
+    <div class="container">
+        <h2>BIENVENIDA_SISTEMA</h2>
+        <h1>ARQCONCEPTUAL</h1>
+        <p style="font-size: 1.2rem; color: #9b9b9b; margin-bottom: 30px;">SOLUCIONES INTEGRALES EN ARQUITECTURA TÉCNICA Y DISEÑO VANGUARDISTA</p>
 
-    <section class="ia-console">
-        <div class="console-box">
-            <span class="label">> CONSULTA DE PROYECTO_IA</span>
-            <textarea id="userInput" placeholder="Escribe tu consulta sobre arquitectura o diseño técnico..."></textarea>
-            <button class="btn-ia" id="sendBtn" onclick="enviarConsulta()">EJECUTAR COMANDO</button>
-
-            <div id="response-card">
-                <span class="label" style="color: #fff;">SISTEMA_RESPUESTA:</span>
-                <div id="responseText" class="response-text"></div>
-            </div>
+        <div class="img-placeholder-main">
+            <img src="imagenes_proyectos/imagen_principal.jpg" alt="Arquitectura Principal" onerror="this.style.display='none';">
         </div>
-    </section>
 
-    <footer class="social-footer">
+        <p>Bienvenido a ARQCONCEPTUAL, su plataforma de referencia para la gestión de proyectos y visualización arquitectónica técnica. En el panorama actual de la construcción, la integración de procesos digitales y la precisión en el diseño ejecutivo son pilares fundamentales para el éxito de cualquier obra. Nuestra misión en ARQCONCEPTUAL es transformar ideas abstractas en realidades tangibles mediante el uso de metodologías avanzadas, asegurando que cada detalle técnico esté alineado con la visión creativa original.</p>
+
+        <h2>FILOSOFÍA DE DISEÑO TÉCNICO</h2>
+        <p>La arquitectura conceptual no es simplemente un ejercicio estético; es la base sobre la cual se erige la funcionalidad y la habitabilidad de un espacio. En ARQCONCEPTUAL, entendemos que un buen diseño debe ser respaldado por una documentación técnica impecable. Esto incluye desde la correcta zonificación de espacios hasta el análisis de sitio detallado, considerando factores ambientales, normativas locales y la optimización de recursos. Creemos firmemente que la transparencia en el proceso de diseño permite a nuestros clientes y colaboradores comprender la complejidad detrás de cada decisión arquitectónica.</p>
+
+        <p>A lo largo de nuestra trayectoria, hemos priorizado la creación de contenido original que aporte valor real a la comunidad arquitectónica. Para cumplir con los estándares de calidad que exige el mercado digital hoy en día, cada uno de nuestros artículos y análisis de obra se redacta bajo criterios de rigor profesional. Exploramos temas que van desde el comportamiento estructural de materiales modernos hasta las últimas tendencias en visualización digital (archviz). Esta dedicación a la profundidad informativa es lo que nos posiciona como una fuente confiable dentro del sector de la arquitectura y la construcción en México.</p>
+
+        <h2>VISUALIZACIÓN Y REPRESENTACIÓN AVANZADA</h2>
+        <p>Uno de los puntos fuertes de ARQCONCEPTUAL es nuestra capacidad para llevar la representación arquitectónica al siguiente nivel. El uso de renders fotorrealistas y recorridos virtuales no solo sirve como una herramienta de marketing, sino como una fase crítica de revisión técnica. Al visualizar un proyecto en alta definición antes de su construcción, somos capaces de detectar interferencias en instalaciones, corregir errores de materialidad y ajustar la iluminación natural para garantizar el confort del usuario final. Esta etapa de post-producción digital es donde la técnica se encuentra con el arte, permitiendo una comunicación clara y efectiva de las intenciones del diseño.</p>
+
+        <p>Además, nuestro compromiso con la innovación nos lleva a explorar constantemente nuevas herramientas de software y flujos de trabajo eficientes. Documentamos estos procesos en nuestra bitácora técnica para ofrecer una mirada interna a cómo se gestionan los proyectos ejecutivos en la actualidad. Desde el modelado inicial hasta el renderizado final, cada paso es una oportunidad para aprender y mejorar los estándares de la industria. Entendemos que la arquitectura es una disciplina en constante evolución y, por ello, ARQCONCEPTUAL se mantiene a la vanguardia tecnológica.</p>
+
+        <h2>COMPROMISO CON LA EXCELENCIA</h2>
+        <p>Finalmente, la relación con nuestros clientes y lectores se basa en la confianza y la comunicación directa. Al visitar nuestras secciones de servicios y portafolio, usted podrá observar la calidad y el detalle que imprimimos en cada entrega. No nos limitamos a entregar planos; entregamos soluciones espaciales que consideran la durabilidad, el mantenimiento y la estética a largo plazo. La arquitectura técnica requiere una atención minuciosa al detalle, y en ARQCONCEPTUAL, esa atención es nuestro sello distintivo.</p>
+
+        <p>Invitamos a todos los interesados en el diseño arquitectónico de alto nivel a explorar nuestro blog y redes sociales, donde compartimos material educativo y muestras de nuestros trabajos más recientes. Ya sea que usted sea un desarrollador inmobiliario buscando una visualización de impacto para su próximo proyecto, o un estudiante de arquitectura buscando entender los procesos de obra residencial, ARQCONCEPTUAL es su aliado estratégico. Seguimos trabajando para elevar el estándar del diseño y la construcción, siempre bajo los principios de originalidad, ética profesional y excelencia técnica.</p>
+    </div>
+
+    <footer class="legal-footer">
         <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61581126082365" target="_blank">FACEBOOK</a>
-            <a href="https://wa.me/525617747188" target="_blank">WHATSAPP</a>
-            <a href="mailto:p6366609@gmail.com">EMAIL</a>
+            <a href="https://arqconceptual.blogspot.com/">BLOGGER</a>
+            <a href="https://www.instagram.com/arqmx_beto/">INSTAGRAM</a>
+            <a href="https://pin.it/72uEQxk0t">PINTEREST</a>
+            <a href="https://www.youtube.com/@arqconceptualmx">YOUTUBE</a>
+            <a href="#">TIKTOK</a>
+            <a href="#">OK.RU</a>
         </div>
-        <p style="font-size: 0.6rem; color: #444; margin-top: 20px; letter-spacing: 3px;">ARQMX.IO &copy; 2025</p>
+        <div style="margin: 25px 0;">
+            <a href="privacidad.html" style="color:#666; text-decoration:none;">PRIVACIDAD</a> | 
+            <a href="terminos.html" style="color:#666; text-decoration:none;">TÉRMINOS</a> | 
+            <a href="nosotros.html" style="color:#666; text-decoration:none;">SOBRE NOSOTROS</a>
+        </div>
+        <p>ARQCONCEPTUAL © 2026 | TODOS LOS DERECHOS RESERVADOS | CONTENIDO ORIGINAL</p>
     </footer>
-
-    <script>
-        async function enviarConsulta() {
-            const input = document.getElementById('userInput');
-            const btn = document.getElementById('sendBtn');
-            const card = document.getElementById('response-card');
-            const responseText = document.getElementById('responseText');
-
-            if (!input.value.trim()) return;
-
-            // Bloquear UI
-            btn.disabled = true;
-            btn.innerText = "PROCESANDO...";
-            card.style.display = "none";
-
-            try {
-                const response = await fetch('http://localhost:5678/webhook-test/2b7a0e7f-1024-4fb4-8e3e-d9ec2fdb7972', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ 
-                        mensaje: input.value,
-                        timestamp: new Date().toISOString()
-                    })
-                });
-
-                const data = await response.json();
-                
-                // Mostrar respuesta
-                card.style.display = "block";
-                // Ajustamos para leer la propiedad que devuelva tu n8n (usualmente 'output' o el objeto directo)
-                responseText.innerText = typeof data === 'object' ? JSON.stringify(data, null, 2) : data;
-
-            } catch (error) {
-                card.style.display = "block";
-                responseText.innerHTML = "<span style='color: #ff4444;'>ERROR: No se pudo conectar con el servidor n8n local. Verifica que esté activo.</span>";
-            } finally {
-                btn.disabled = false;
-                btn.innerText = "EJECUTAR COMANDO";
-            }
-        }
-    </script>
-
 </body>
 </html>
