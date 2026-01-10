@@ -2,113 +2,77 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARQMX.IO | Contacto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <title>ARQCONCEPTUAL | Contacto</title>
     <style>
-        :root { --accent: #9b9b9b; --bg: #0f0f0f; --tech-font: 'Space Mono', monospace; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; margin: 0; }
-        nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #252525; align-items: center; }
-        .logo { font-family: var(--tech-font); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; color: #fff; }
-        nav a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.75rem; letter-spacing: 2px; font-weight: 300; }
-        nav a:hover, nav a.active { color: #fff; }
+        body { font-family: 'Consolas', monospace; background: #0f0f0f; color: #fff; margin: 0; }
+        nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #252525; align-items: center; background: #000; }
+        .logo { font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; color: #fff; }
+        nav div a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.8rem; text-transform: uppercase; }
+        nav div a:hover { color: #fff; }
         
-        .container { padding: 60px 10%; max-width: 800px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        h2 { font-size: 3rem; letter-spacing: -2px; margin-bottom: 30px; grid-column: 1 / -1; }
-        
-        /* Estilos del Formulario */
-        form { display: flex; flex-direction: column; gap: 20px; }
-        input, textarea { 
-            background: #161616; border: 1px solid #333; padding: 15px; 
-            color: #fff; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; 
-        }
-        input:focus, textarea:focus { border-color: var(--accent); }
-        .btn-send { 
-            background: #fff; color: #000; padding: 15px; border: none; 
-            font-weight: bold; cursor: pointer; font-family: var(--tech-font); letter-spacing: 1px; 
-        }
-        .btn-send:disabled { background: #444; cursor: not-allowed; }
+        .container { padding: 60px 10%; max-width: 800px; }
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        p { color: #9b9b9b; margin-bottom: 40px; }
 
-        .contact-info { display: flex; flex-direction: column; gap: 30px; }
-        .label { font-family: var(--tech-font); color: #444; font-size: 0.7rem; text-transform: uppercase; display: block; margin-bottom: 5px; }
-        .data { font-size: 1.1rem; color: #f0f0f0; text-decoration: none; transition: 0.3s; }
+        /* Estilos del Formulario */
+        form { display: flex; flex-direction: column; gap: 20px; background: #161616; padding: 30px; border: 1px solid #222; }
+        label { font-size: 0.8rem; color: #666; }
+        input, textarea { 
+            background: #000; border: 1px solid #333; color: #fff; padding: 12px; 
+            font-family: 'Consolas', monospace; outline: none; 
+        }
+        input:focus, textarea:focus { border-color: #fff; }
         
-        @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
+        .btn-enviar { 
+            background: #fff; color: #000; border: none; padding: 15px; 
+            font-weight: bold; cursor: pointer; font-family: 'Consolas', monospace;
+            text-transform: uppercase;
+        }
+        .btn-enviar:hover { background: #ccc; }
+
+        .btn-whatsapp { 
+            display: inline-block; background: #25d366; color: #fff; 
+            padding: 15px 30px; text-decoration: none; margin-top: 20px; 
+            font-weight: bold; text-align: center;
+        }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">ARQMX.IO</a>
+        <a href="index.html" class="logo">ARQCONCEPTUAL</a>
         <div>
             <a href="index.html">INICIO</a>
             <a href="portafolio.html">PORTAFOLIO</a>
             <a href="servicios.html">SERVICIOS</a>
             <a href="blog.html">BLOG</a>
-            <a href="contacto.html" class="active" style="color:#fff">CONTACTO</a>
+            <a href="contacto.html">CONTACTO</a>
         </div>
     </nav>
 
     <div class="container">
-        <h2>VAMOS A CONSTRUIR.</h2>
+        <h1>VAMOS A CONSTRUIR.</h1>
+        <p>Completa el formulario para recibir una propuesta técnica o usa el botón de WhatsApp para contacto inmediato.</p>
 
-        <form id="form-n8n">
-            <input type="text" name="nombre" placeholder="Nombre completo" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="mensaje" placeholder="Tu idea o proyecto..." rows="4" required></textarea>
-            <button type="submit" class="btn-send" id="btn-txt">ENVIAR SOLICITUD</button>
+        <form action="https://formsubmit.co/p6366609@gmail.com" method="POST">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
+            
+            <label>NOMBRE COMPLETO</label>
+            <input type="text" name="nombre" placeholder="Escribe tu nombre..." required>
+
+            <label>CORREO ELECTRÓNICO</label>
+            <input type="email" name="email" placeholder="tu@correo.com" required>
+
+            <label>TELÉFONO</label>
+            <input type="tel" name="telefono" placeholder="55 0000 0000" required>
+
+            <label>DESCRIPCIÓN DEL PROYECTO</label>
+            <textarea name="mensaje" rows="5" placeholder="Cuéntame sobre tu idea, ubicación y metros cuadrados..." required></textarea>
+
+            <button type="submit" class="btn-enviar">ENVIAR SOLICITUD A MI CORREO</button>
         </form>
 
-        <div class="contact-info">
-            <div>
-                <span class="label">Email</span>
-                <a href="mailto:p6366609@gmail.com" class="data">p6366609@gmail.com</a>
-            </div>
-            <div>
-                <span class="label">WhatsApp</span>
-                <a href="https://wa.me/525617747188" class="data">+52 56 1774 7188</a>
-            </div>
-            <div>
-                <span class="label">Social</span>
-                <a href="https://www.facebook.com/profile.php?id=61581126082365" target="_blank" class="data">Facebook</a>
-            </div>
-        </div>
+        <a href="https://wa.me/525617747188" class="btn-whatsapp">CONTACTO POR WHATSAPP</a>
     </div>
-
-    <script>
-        const form = document.getElementById('form-n8n');
-        const btn = document.getElementById('btn-txt');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            btn.innerText = 'PROCESANDO...';
-            btn.disabled = true;
-
-            // REEMPLAZA ESTA URL CON LA QUE TE DE N8N AL HACER 'n8n start --tunnel'
-            const N8N_URL = 'https://TU_SUBDOMINIO.hooks.n8n.cloud/webhook/contacto';
-
-            const payload = Object.fromEntries(new FormData(form));
-
-            try {
-                const response = await fetch(N8N_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (response.ok) {
-                    alert('Recibido. Nos pondremos en contacto pronto.');
-                    form.reset();
-                } else {
-                    throw new Error();
-                }
-            } catch (err) {
-                alert('No pudimos conectar con el servidor local. Intentando por WhatsApp...');
-                window.location.href = "https://wa.me/525617747188?text=Hola, intenté contactarte por la web...";
-            } finally {
-                btn.innerText = 'ENVIAR SOLICITUD';
-                btn.disabled = false;
-            }
-        });
-    </script>
 </body>
 </html>
