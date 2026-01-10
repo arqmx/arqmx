@@ -2,94 +2,69 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARQMX.IO | Blog Técnica</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <title>ARQCONCEPTUAL | Blog</title>
     <style>
-        :root { --accent: #9b9b9b; --bg: #0f0f0f; --card: #161616; --tech-font: 'Space Mono', monospace; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; margin: 0; }
-        
+        body { font-family: 'Consolas', monospace; background: #0f0f0f; color: #fff; margin: 0; }
         nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #252525; align-items: center; background: #000; }
-        .logo { font-family: var(--tech-font); font-weight: bold; font-size: 1.2rem; letter-spacing: 2px; text-decoration: none; color: #fff; }
-        nav a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.7rem; letter-spacing: 2px; }
-        nav a.active { color: #fff; }
-
-        .admin-bar { background: #1a1a1a; padding: 10px 5%; display: flex; gap: 20px; border-bottom: 1px solid #333; font-family: var(--tech-font); font-size: 0.7rem; color: #666; }
-        .add-file-btn { background: #333; color: #fff; padding: 5px 15px; border-radius: 4px; text-decoration: none; }
-
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 5%; }
-        .section-header { border-left: 2px solid #333; padding-left: 20px; margin-bottom: 40px; }
-        .section-header h1 { font-size: 1.5rem; font-family: var(--tech-font); font-weight: 300; color: var(--accent); }
-
-        /* ESTILO LISTA BLOG */
-        .blog-list { border: 1px solid #222; border-radius: 4px; overflow: hidden; }
-        .blog-item { display: grid; grid-template-columns: 100px 1fr 150px; padding: 20px; border-bottom: 1px solid #222; background: var(--card); transition: 0.3s; align-items: center; }
-        .blog-item:hover { background: #1d1d1d; }
+        .logo { font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; color: #fff; }
+        nav div a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.8rem; text-transform: uppercase; }
+        nav div a:hover { color: #fff; }
         
-        .blog-thumb { width: 70px; height: 70px; background: #000; display: flex; align-items: center; justify-content: center; border: 1px solid #333; }
-        .blog-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+        .container { padding: 50px 10%; }
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        .subtitle { color:#666; margin-bottom: 10px; display: block; }
         
-        .blog-info h2 { margin: 0; font-size: 1.1rem; letter-spacing: -0.5px; }
-        .blog-info p { margin: 5px 0 0; color: #666; font-size: 0.85rem; }
-        
-        .blog-meta { font-family: var(--tech-font); font-size: 0.65rem; color: #444; text-align: right; }
-        .btn-yt { color: #f00; text-decoration: none; display: block; margin-top: 5px; }
-
-        @media (max-width: 768px) {
-            .blog-item { grid-template-columns: 1fr; gap: 15px; text-align: left; }
-            .blog-meta { text-align: left; }
+        .btn-blogger-main {
+            display: inline-block;
+            background: #ff8000;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            border-radius: 4px;
         }
+        .btn-blogger-main:hover { background: #e67300; }
+
+        .blog-item { display: flex; gap: 30px; margin-bottom: 50px; border: 1px solid #222; padding: 25px; align-items: flex-start; }
+        
+        /* Contenedor de imagen ajustado */
+        .img-space { min-width: 350px; height: 200px; background: #1a1a1a; border: 1px dashed #444; overflow: hidden; }
+        .img-space img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .blog-text { flex: 1; }
+        .btn-yt { color: #ff0000; text-decoration: none; border: 1px solid #ff0000; padding: 5px 10px; display: inline-block; margin-top: 15px; }
     </style>
 </head>
 <body>
-
     <nav>
-        <a href="index.html" class="logo">ARQMX.IO</a>
+        <a href="index.html" class="logo">ARQCONCEPTUAL</a>
         <div>
             <a href="index.html">INICIO</a>
             <a href="portafolio.html">PORTAFOLIO</a>
             <a href="servicios.html">SERVICIOS</a>
-            <a href="blog.html" class="active">BLOG</a>
+            <a href="blog.html">BLOG</a>
             <a href="contacto.html">CONTACTO</a>
         </div>
     </nav>
 
-    <div class="admin-bar">
-        <span>root / arqmx / contents / </span>
-        <a href="https://www.youtube.com/@TuCanal" class="add-file-btn">+ Add content</a>
-    </div>
-
     <div class="container">
-        <div class="section-header">
-            <h1>BITÁCORA DE PROYECTOS <span style="color:#333">//</span> MEDIA</h1>
-        </div>
+        <h1>BITÁCORA TÉCNICA // MEDIA</h1>
+        <span class="subtitle">DOCUMENTACIÓN DE PROCESOS Y ANÁLISIS DE OBRA</span>
+        
+        <a href="https://arqconceptual.blogspot.com/" class="btn-blogger-main" target="_blank">BLOGGER</a>
 
-        <div class="blog-list">
-            <div class="blog-item">
-                <div class="blog-thumb"><img src="https://img.youtube.com/vi/dQw4w9WgXcQ/default.jpg"></div>
-                <div class="blog-info">
-                    <h2>01. Análisis de Materiales: Concreto Aparente</h2>
-                    <p>Explorando la textura y durabilidad en obra residencial.</p>
-                </div>
-                <div class="blog-meta">
-                    <span>DEC 2025</span>
-                    <a href="#" class="btn-yt">YOUTUBE_LINK</a>
-                </div>
+        <div class="blog-item">
+            <div class="img-space">
+                <img src="imagenes_proyectos/imagen_blog1.jpg" alt="Entrada Blog" onerror="this.style.display='none';">
             </div>
-
-            <div class="blog-item">
-                <div class="blog-thumb"><img src="https://img.youtube.com/vi/dQw4w9WgXcQ/default.jpg"></div>
-                <div class="blog-info">
-                    <h2>02. Tutorial: Configuración de Luces en V-Ray</h2>
-                    <p>Mi flujo de trabajo para renders de interiores nocturnos.</p>
-                </div>
-                <div class="blog-meta">
-                    <span>NOV 2025</span>
-                    <a href="#" class="btn-yt">YOUTUBE_LINK</a>
-                </div>
+            <div class="blog-text">
+                <h2>01. ESTRATEGIAS DE DISEÑO: ARQUITECTURA CONCEPTUAL</h2>
+                <p>Exploramos el proceso creativo desde la idea inicial hasta la representación técnica. Este video analiza cómo la conceptualización define la materialidad y la forma, permitiendo una ejecución coherente y de alto impacto visual en cada proyecto arquitectónico.</p>
+                <a href="https://www.youtube.com/@arqconceptualmx" class="btn-yt" target="_blank">VER EN YOUTUBE_</a>
             </div>
         </div>
     </div>
-
 </body>
 </html>
