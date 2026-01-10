@@ -2,79 +2,91 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARQMX.IO | Servicios Especializados</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <title>ARQCONCEPTUAL | Servicios</title>
     <style>
-        :root { --accent: #9b9b9b; --bg: #0f0f0f; --tech-font: 'Space Mono', monospace; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; margin: 0; }
-        nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #252525; align-items: center; }
-        .logo { font-family: var(--tech-font); font-weight: bold; font-size: 1.2rem; text-decoration: none; color: #fff; }
-        nav a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.7rem; letter-spacing: 2px; }
+        body { font-family: 'Consolas', monospace; background: #0f0f0f; color: #fff; margin: 0; line-height: 1.8; }
+        nav { display: flex; justify-content: space-between; padding: 25px 5%; border-bottom: 1px solid #252525; align-items: center; background: #000; }
+        .logo { font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; color: #fff; }
+        nav div a { color: #666; text-decoration: none; margin-left: 20px; font-size: 0.8rem; text-transform: uppercase; }
+        nav div a:hover { color: #fff; }
         
-        .container { padding: 80px 10%; max-width: 1200px; margin: 0 auto; }
-        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .container { padding: 60px 10%; max-width: 1000px; margin: 0 auto; }
+        h1 { font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; border-left: 5px solid #fff; padding-left: 20px; }
+        h2 { font-size: 1.5rem; color: #9b9b9b; margin-top: 50px; margin-bottom: 20px; text-transform: uppercase; }
         
-        .service-card { border: 1px solid #222; padding: 40px; background: #141414; transition: 0.3s; }
-        .service-card:hover { border-color: #fff; }
-        .service-card h3 { font-family: var(--tech-font); font-size: 1rem; color: #fff; margin-bottom: 20px; }
-        .service-card p { color: #888; font-size: 0.9rem; line-height: 1.6; }
-        .service-card ul { list-style: none; padding: 0; margin-top: 20px; }
-        .service-card ul li { color: #555; font-size: 0.75rem; margin-bottom: 8px; border-left: 1px solid #333; padding-left: 10px; }
+        /* Grid de servicios original */
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 60px; }
+        .card { border: 1px solid #222; padding: 0 0 20px 0; background: #121212; }
+        .img-top { height: 180px; background: #1a1a1a; border-bottom: 1px solid #222; margin-bottom: 20px; overflow: hidden; }
+        .img-top img { width: 100%; height: 100%; object-fit: cover; }
+        h3, .card p { padding: 0 20px; }
+        h3 { font-size: 1.1rem; color: #fff; }
+        .card p { font-size: 0.9rem; color: #ccc; }
 
-        .process-section { margin-top: 100px; border-top: 1px solid #222; padding-top: 60px; }
-        .process-title { font-family: var(--tech-font); font-size: 0.6rem; letter-spacing: 5px; color: #444; }
+        /* Estilo para el texto extenso solicitado */
+        .extra-content { text-align: justify; color: #ccc; border-top: 1px solid #333; padding-top: 40px; margin-top: 40px; }
+        .extra-content p { margin-bottom: 25px; }
+
+        .legal-footer { padding: 40px 5%; border-top: 1px solid #252525; text-align: center; font-size: 0.7rem; margin-top: 50px; background: #000; }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">ARQMX.IO</a>
+        <a href="index.html" class="logo">ARQCONCEPTUAL</a>
         <div>
             <a href="index.html">INICIO</a>
             <a href="portafolio.html">PORTAFOLIO</a>
-            <a href="servicios.html" style="color:#fff">SERVICIOS</a>
+            <a href="servicios.html">SERVICIOS</a>
             <a href="blog.html">BLOG</a>
             <a href="contacto.html">CONTACTO</a>
         </div>
     </nav>
 
     <div class="container">
-        <h1 style="font-size: 3rem; letter-spacing: -2px; margin-bottom: 60px;">SERVICIOS<br><span style="color:#333">SOLUCIONES TÉCNICAS.</span></h1>
+        <h1>SERVICIOS: SOLUCIONES TÉCNICAS</h1>
         
-        <div class="grid-services">
-            <div class="service-card">
+        <div class="grid">
+            <div class="card">
+                <div class="img-top">
+                    <img src="imagenes_proyectos/imagen_servicio1.jpg" alt="Diseño Arquitectónico" onerror="this.style.display='none';">
+                </div>
                 <h3>[01] DISEÑO ARQUITECTÓNICO</h3>
-                <p>Desarrollo de proyectos desde el esquema básico hasta el anteproyecto.</p>
-                <ul>
-                    <li>+ Zonificación de espacios</li>
-                    <li>+ Análisis de sitio</li>
-                    <li>+ Planos arquitectónicos</li>
-                </ul>
+                <p>Desarrollo de proyectos desde el esquema básico hasta el anteproyecto, incluyendo zonificación y análisis de sitio.</p>
             </div>
-            <div class="service-card">
+            <div class="card">
+                <div class="img-top">
+                    <img src="imagenes_proyectos/imagen_servicio2.jpg" alt="Visualización Avanzada" onerror="this.style.display='none';">
+                </div>
                 <h3>[02] VISUALIZACIÓN AVANZADA</h3>
-                <p>Creación de imágenes fotorealistas para marketing y ventas.</p>
-                <ul>
-                    <li>+ Renders exteriores/interiores</li>
-                    <li>+ Recorridos virtuales</li>
-                    <li>+ Post-producción digital</li>
-                </ul>
+                <p>Creación de imágenes fotorrealistas, recorridos virtuales y post-producción digital para marketing arquitectónico.</p>
             </div>
-            <div class="service-card">
+            <div class="card">
+                <div class="img-top">
+                    <img src="imagenes_proyectos/imagen_servicio3.jpg" alt="Ingeniería y Trámites" onerror="this.style.display='none';">
+                </div>
                 <h3>[03] INGENIERÍA Y TRÁMITES</h3>
-                <p>Coordinación de ingenierías y documentación para licencias.</p>
-                <ul>
-                    <li>+ Cálculo estructural</li>
-                    <li>+ Instalaciones hidro-sanitarias</li>
-                    <li>+ Memoria descriptiva</li>
-                </ul>
+                <p>Coordinación de ingenierías, cálculo estructural y gestión de documentación para licencias oficiales.</p>
             </div>
         </div>
 
-        <div class="process-section">
-            <span class="process-title">WORKFLOW</span>
-            <p style="color:#444; font-size: 0.9rem; margin-top: 20px;">ENTREVISTA > CONCEPTO > DISEÑO > VISUALIZACIÓN > ENTREGA FINAL</p>
+        <div class="extra-content">
+            <h2>DETALLES DE NUESTRO FLUJO DE TRABAJO PROFESIONAL</h2>
+            <p>En ARQCONCEPTUAL, entendemos que la prestación de servicios arquitectónicos de alta calidad requiere una estructura sólida y una metodología transparente. Nuestro enfoque no se limita a la creación estética; nos adentramos en la ingeniería técnica y la viabilidad constructiva de cada propuesta. El diseño arquitectónico integral es el primer paso crítico de nuestro proceso. Aquí, analizamos las necesidades espaciales del usuario final en conjunto con las limitantes del terreno, tales como la orientación solar, la topografía y el entorno urbano. Esta etapa de conceptualización es fundamental para asegurar que el edificio no solo sea una obra de arte visual, sino un espacio funcional y eficiente energéticamente.</p>
+
+            <p>La visualización avanzada que ofrecemos en ARQCONCEPTUAL va más allá de un simple render. Utilizamos motores de renderizado de última generación que nos permiten simular con exactitud física cómo la luz interactúa con los materiales reales. Esto es vital para proyectos de alta gama donde la textura del concreto aparente, la veta de la madera o el reflejo del vidrio deben ser representados con total honestidad. Nuestros clientes utilizan este material no solo para su comercialización y marketing inmobiliario, sino como una herramienta de toma de decisiones técnica que permite ajustar presupuestos y especificaciones de materiales antes de colocar el primer ladrillo en la obra.</p>
+
+            <p>El tercer pilar de nuestros servicios, que abarca la ingeniería y los trámites legales, es lo que garantiza la seguridad y la legalidad de la inversión. Coordinamos estrechamente con ingenieros estructurales, especialistas en instalaciones hidrosanitarias y peritos en electricidad para que cada plano ejecutivo sea una guía precisa para los constructores. La arquitectura técnica de ARQCONCEPTUAL se basa en el cumplimiento estricto de los reglamentos de construcción vigentes en México, facilitando la obtención de licencias de construcción y evitando costosas multas o retrasos por falta de planeación administrativa.</p>
+
+            <p>Además, creemos firmemente en la educación y la transparencia. Por ello, documentamos gran parte de nuestro flujo de trabajo para que estudiantes y profesionales del sector puedan comprender los estándares de calidad que manejamos. El desarrollo de una memoria descriptiva detallada, el análisis de precios unitarios y la selección de proveedores de materiales son tareas que realizamos con el mayor rigor profesional. En ARQCONCEPTUAL, cada proyecto es tratado como una pieza única de ingeniería conceptual, donde la innovación y la tradición constructiva se fusionan para entregar resultados excepcionales.</p>
+
+            <p>Nuestra consultoría técnica también se extiende a la supervisión de obra y la gestión de proyectos (Project Management). Entendemos que incluso el mejor diseño puede fallar si no hay una supervisión adecuada en campo. Por ello, ofrecemos servicios de acompañamiento técnico para asegurar que lo plasmado en los renders y planos se ejecute con la calidad prometida. La arquitectura es una responsabilidad social, y nuestro compromiso es elevar el estándar de vida de los habitantes a través de espacios seguros, estéticos y altamente funcionales. Al elegir ARQCONCEPTUAL, usted está adquiriendo un respaldo técnico completo, desde la primera línea del boceto hasta la entrega de las llaves del proyecto terminado.</p>
+
+            <p>Finalmente, nuestra pasión por la tecnología nos permite integrar metodologías BIM (Building Information Modeling) que optimizan los tiempos de entrega y reducen el margen de error humano. La arquitectura del futuro es colaborativa y digital, y en ARQCONCEPTUAL estamos listos para enfrentar los retos del desarrollo urbano contemporáneo. Invitamos a desarrolladores inmobiliarios y particulares a conocer más sobre nuestra capacidad de respuesta técnica y nuestra visión innovadora en cada uno de los servicios especializados que ponemos a su disposición.</p>
         </div>
     </div>
+
+    <footer class="legal-footer">
+        <p>ARQCONCEPTUAL © 2026 | TODOS LOS DERECHOS RESERVADOS | CONTENIDO TÉCNICO ORIGINAL</p>
+    </footer>
 </body>
 </html>
